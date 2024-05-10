@@ -1,3 +1,4 @@
+import random
 import pytest
 from api.login import LoginAPI
 from api.course import CourseAPI
@@ -64,7 +65,7 @@ class TestContractBusiness:
         contract_data = {
             "name": "测试888",
             "phone": "13612341888",
-            "contractNo": "HT1001200412224441",
+            "contractNo": f"HT20240501{random.randint(100000, 999999)}",
             "subject": "6",
             "courseId": 99,
             "channel": "0",
