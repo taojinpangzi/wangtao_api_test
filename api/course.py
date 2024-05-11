@@ -15,3 +15,6 @@ class CourseAPI:
 
     def delete_course(self, token, test_data):
         return requests.delete(url=self.url_add_course + f"/{test_data}", headers={"Authorization": token})
+
+    def update_course(self, token, test_data):
+        return requests.put(url=self.url_add_course, headers={"Authorization": token}, json=test_data)
