@@ -1,16 +1,30 @@
 from api.login import *
 import pytest
+import json
 
 
-test_data = [
-    ("admin", "HM_2023_test", 200, 200, "成功"),
-    ("", "HM_2023_test", 200, 500, "错误"),
-    ("wangtao", "HM_2023_test", 200, 500, "错误")
-]
+# test_data = [
+#     ("admin", "HM_2023_test", 200, 200, "成功"),
+#     ("", "HM_2023_test", 200, 500, "错误"),
+#     ("wangtao", "HM_2023_test", 200, 500, "错误")
+# ]
+def build_data(json_file: str) -> list:
+    test_data = list()
+    with (open(json_file, "r", encoding="UTF-8") as f):
+        for case_data in json.load(f):
+            username = case_data["username"]
+            password = case_data["password"]
+            status = case_data["status"]
+            code = case_data["code"]
+            message = case_data["message"]
+            test_data.append((username, password, status, code, message))
+    return test_data
+
+
+test_data = build_data("D:/wangtao_api_test/data/login.json")
 
 
 class TestLoginAPI:
-
     uuid = None
 
     def setup_method(self):
