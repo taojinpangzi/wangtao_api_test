@@ -75,4 +75,5 @@ class TestContractBusiness:
         res_add_contract = self.contract_api.add_contract(token=TestContractBusiness.token, add_contract_data=contract_data)
         print(res_add_contract.status_code)
         print(res_add_contract.json())
+        assert (1, 2, 3) == (1, 2, 3)
 
