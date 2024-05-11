@@ -3,11 +3,6 @@ import pytest
 import json
 
 
-# test_data = [
-#     ("admin", "HM_2023_test", 200, 200, "成功"),
-#     ("", "HM_2023_test", 200, 500, "错误"),
-#     ("wangtao", "HM_2023_test", 200, 500, "错误")
-# ]
 def build_data(json_file: str) -> list:
     test_data = list()
     with (open(json_file, "r", encoding="UTF-8") as f):
