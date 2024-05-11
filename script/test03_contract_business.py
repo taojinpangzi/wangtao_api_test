@@ -1,5 +1,5 @@
 import random
-import pytest
+from config import *
 from api.login import LoginAPI
 from api.course import CourseAPI
 from api.contract import ContractAPI
@@ -54,7 +54,7 @@ class TestContractBusiness:
 
     # 上传合同成功
     def test03_upload_contract_success(self):
-        upload_files = open("D:/日本.txt", "r", encoding="UTF-8")
+        upload_files = open(BASE_PATH + "/data/日本.txt", "r", encoding="UTF-8")
         res_contract = self.contract_api.upload_contract(token=TestContractBusiness.token, upload_files=upload_files)
         print(res_contract.status_code)
         print(res_contract.json())

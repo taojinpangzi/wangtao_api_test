@@ -1,6 +1,7 @@
 from api.login import *
 import pytest
 import json
+from config import *
 
 
 def build_data(json_file: str) -> list:
@@ -16,7 +17,7 @@ def build_data(json_file: str) -> list:
     return test_data
 
 
-test_data = build_data("D:/wangtao_api_test/data/login.json")
+test_data = build_data(BASE_PATH + "/data/login.json")
 
 
 class TestLoginAPI:

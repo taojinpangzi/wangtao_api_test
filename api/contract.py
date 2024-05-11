@@ -1,10 +1,11 @@
 import requests
+from config import *
 
 
 class ContractAPI:
     def __init__(self):
-        self.url_upload = "http://kdtx-test.itheima.net/api/common/upload"
-        self.url_add_contract = "http://kdtx-test.itheima.net/api/contract"
+        self.url_upload = BASE_URL + "/api/common/upload"
+        self.url_add_contract = BASE_URL + "/api/contract"
 
     def upload_contract(self, upload_files, token):
         return requests.post(url=self.url_upload, files={"file": upload_files}, headers={"Authorization": token})
