@@ -55,7 +55,7 @@ class TestContractBusiness:
     # 上传合同成功
     def test03_upload_contract_success(self):
         upload_files = open(BASE_PATH + "/data/日本.txt", "r", encoding="UTF-8")
-        res_contract = self.contract_api.upload_contract(token=TestContractBusiness.token, upload_files=upload_files)
+        res_contract = self.contract_api.upload_contract(token=TestContractBusiness.token, upload_file=upload_files)
         print(res_contract.status_code)
         print(res_contract.json())
         TestContractBusiness.fileName = res_contract.json()["fileName"]
@@ -72,7 +72,7 @@ class TestContractBusiness:
             "activityId": 77,
             "fileName": TestContractBusiness.fileName
         }
-        res_add_contract = self.contract_api.add_contract(token=TestContractBusiness.token, add_contract_data=contract_data)
+        res_add_contract = self.contract_api.add_contract(token=TestContractBusiness.token, test_data=contract_data)
         print(res_add_contract.status_code)
         print(res_add_contract.json())
         assert (1, 2, 3) == (1, 2, 3)

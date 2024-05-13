@@ -11,3 +11,8 @@ class OperationsMYSQL:
             password=MYSQL_PASSWORD,
             autocommit=False
         )
+
+    # 获取游标对象
+    def get_cursor(self, db_name: str):
+        self.connection.select_db(db_name)
+        return self.connection.cursor()

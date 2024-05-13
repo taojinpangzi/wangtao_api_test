@@ -25,8 +25,8 @@ class TestSelectCourse:
         pass
 
     def test01_select_course_success(self):
-        add_data = "?name=测试开发提升课01"
-        response = self.course_api.select_course(token=TestSelectCourse.token, test_data=add_data)
+        add_data = "name=测试开发提升课01"
+        response = self.course_api.query_course_list(token=TestSelectCourse.token, test_data=add_data)
         assert response.status_code == 200
         assert response.json()["msg"] == "查询成功"
         assert response.json()["code"] == 200
@@ -35,7 +35,7 @@ class TestSelectCourse:
 
     def test01_select_course_fail(self):
         add_data = "?name=测试开发提升课01"
-        response = self.course_api.select_course(token="xxx", test_data=add_data)
+        response = self.course_api.query_course_list(token="xxx", test_data=add_data)
         assert response.status_code == 200
         assert "失败" in response.text
         assert response.json()["code"] == 401

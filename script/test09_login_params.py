@@ -17,7 +17,7 @@ def build_data(json_file: str) -> list:
     return test_data
 
 
-test_data = build_data(BASE_PATH + "/data/login.json")
+test_data = build_data(BASE_PATH + "/data/parametrize_login.json")
 
 
 class TestLoginAPI:
