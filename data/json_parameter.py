@@ -1,22 +1,25 @@
+import random
 from config import *
 
 
-def get_parameter_login(uuid, username=USERNAME, password=PASSWORD):
+def get_parameter_login(uuid, username=USERNAME, password=PASSWORD, code=2):
     login_data = {
         "username": username,
         "password": password,
-        "code": 2,
+        "code": code,
         "uuid": uuid
     }
     return login_data
 
 
-def get_parameter_add_course(uuid, username=USERNAME, password=PASSWORD):
+def get_parameter_add_course(name=f"测试课程{random.randint(1, 1000)}", subject="6", price=1000,\
+                             applicablePerson="2", info="测试信息"):
     add_course_data = {
-        "username": username,
-        "password": password,
-        "code": 2,
-        "uuid": uuid
+            "name": name,
+            "subject": subject,
+            "price": price,
+            "applicablePerson": applicablePerson,
+            "info": info
     }
     return add_course_data
 
