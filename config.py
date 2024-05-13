@@ -6,6 +6,9 @@ BASE_URL = "http://kdtx-test.itheima.net"
 # 项目根目录路径
 BASE_PATH = os.path.dirname(__file__)
 
+# 测试数据路径
+DATA_PATH = BASE_PATH + "/data/"
+
 # 项目mysql连接信息
 MYSQL_HOST = "localhost"
 MYSQL_PORT = 3306

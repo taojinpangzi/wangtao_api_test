@@ -1,24 +1,7 @@
 from api.login import *
 import pytest
-import json
+from common.json_to_list import *
 from config import *
-
-
-def build_data(json_file: str) -> list:
-    parametrize_data = list()
-    with (open(json_file, "r", encoding="UTF-8") as f):
-        for case_data in json.load(f):
-            username = case_data["username"]
-            password = case_data["password"]
-            status = case_data["status"]
-            code = case_data["code"]
-            message = case_data["message"]
-            parametrize_data.append((username, password, status, code, message))
-    print(f"参数化数据{parametrize_data}")
-    return parametrize_data
-
-
-parametrize_data = build_data(BASE_PATH + "/data/parametrize_login.json")
 
 
 class TestLoginAPI:
@@ -32,7 +15,7 @@ class TestLoginAPI:
     def teardown_method(self):
         pass
 
-    @pytest.mark.parametrize("username, password, status, code, message", parametrize_data)
+    @pytest.mark.parametrize("username, password, status, code, message", get_login_parametrize_data(DATA_PATH + "parametrize_login.json"))
     def test_parametrize_login(self, username, password, status, code, message):
         login_data = {
             "username": username,
