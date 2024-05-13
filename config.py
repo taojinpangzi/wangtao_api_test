@@ -3,5 +3,11 @@ import os
 # 项目url地址
 BASE_URL = "http://kdtx-test.itheima.net"
 
-# 项目根路径
+# 项目根目录路径
 BASE_PATH = os.path.dirname(__file__)
+
+# 项目mysql连接信息
+MYSQL_HOST = "localhost"
+MYSQL_PORT = "3306"
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "123456"
