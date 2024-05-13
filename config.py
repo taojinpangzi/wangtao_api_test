@@ -15,3 +15,4 @@ MYSQL_PASSWORD = "123456"
 # 登陆账号/密码/验证码
 USERNAME = "admin"
 PASSWORD = "HM_2023_test"
+VERIFY_CODE = 2

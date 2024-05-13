@@ -2,7 +2,7 @@ import random
 from config import *
 
 
-def get_parameter_login(uuid, username=USERNAME, password=PASSWORD, code=2):
+def get_parameter_login(uuid, username=USERNAME, password=PASSWORD, code=VERIFY_CODE):
     login_data = {
         "username": username,
         "password": password,
