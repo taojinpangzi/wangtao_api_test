@@ -1,7 +1,6 @@
 from api.course import *
 from api.login import *
 from data.json_parameter import *
-from common.mysql_operations import *
 
 
 class TestAddCourse:
@@ -34,7 +33,3 @@ class TestAddCourse:
         assert response.status_code == 200
         assert "失败" in response.text
         assert response.json()["code"] == 401
-
-    # def test0001(self):
-    #     operationsMYSQL = OperationsMYSQL()
-    #     results: tuple = operationsMYSQL.get_dql_result("test", "select * from student")
