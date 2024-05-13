@@ -8,7 +8,7 @@ BASE_PATH = os.path.dirname(__file__)
 
 # 项目mysql连接信息
 MYSQL_HOST = "localhost"
-MYSQL_PORT = "3306"
+MYSQL_PORT = 3306
 MYSQL_USER = "root"
 MYSQL_PASSWORD = "123456"
 

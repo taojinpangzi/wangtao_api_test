@@ -9,10 +9,12 @@ class OperationsMYSQL:
             port=MYSQL_PORT,
             user=MYSQL_USER,
             password=MYSQL_PASSWORD,
-            autocommit=False
+            autocommit=True
         )
 
-    # 获取游标对象
-    def get_cursor(self, db_name: str):
+    # 执行查询性质的sql语句，返回查询结果
+    def get_dql_result(self, db_name: str, sql_statement: str) -> tuple:
         self.connection.select_db(db_name)
-        return self.connection.cursor()
+        cursor = self.connection.cursor()
+        cursor.execute(sql_statement)
+        return cursor.fetchall()

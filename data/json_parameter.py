@@ -12,7 +12,7 @@ def get_parameter_login(uuid, username=USERNAME, password=PASSWORD, code=VERIFY_
     return login_data
 
 
-def get_parameter_add_course(name=f"测试课程{random.randint(1, 1000)}", subject="6", price=1000,\
+def get_parameter_add_course(name=f"测试课程{random.randint(1, 1000)}", subject="6", price=1000,
                              applicablePerson="2", info="测试信息"):
     add_course_data = {
             "name": name,
