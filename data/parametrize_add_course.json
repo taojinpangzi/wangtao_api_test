@@ -1,23 +1,32 @@
 [
   {
-    "name": "111",
-    "subject": "111",
+    "name": "测试课程",
+    "subject": "6",
     "price": 200,
-    "applicablePerson": 200,
-    "info": "111"
+    "applicablePerson": "2",
+    "info": "信息",
+    "status": 200,
+    "code": 200,
+    "message": "成功"
   },
   {
-    "name": "222",
-    "subject": "222",
-    "price": 200,
-    "applicablePerson": 200,
-    "info": "222"
+    "name": "测试课程",
+    "subject": "6",
+    "price": "错误的价格",
+    "applicablePerson": "2",
+    "info": "信息",
+    "status": 200,
+    "code": 500,
+    "message": "JSON parse error"
   },
   {
-    "name": "333",
-    "subject": "333",
-    "price": 200,
-    "applicablePerson": 200,
-    "info": "333"
+    "name": "测试课程",
+    "subject": "6",
+    "price": 2000,
+    "applicablePerson": "2",
+    "info": "",
+    "status": 200,
+    "code": 200,
+    "message": "成功"
   }
 ]
